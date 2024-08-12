@@ -16,6 +16,7 @@
 		"jest": "^29.7.0"
 	},
 	"jest": {
-		"transform": {}
+		"transform": {},
+		"verbose": true
 	}
 }
