@@ -1,27 +1,26 @@
-export default function Ship(length, name, initalHits = 0) {
-    let hits = initalHits;
-	let sunk = false;
+export default function Ship(length, name) {
+	let hits = 0;
 
-    const hit = () => {
+	const hit = () => {
 		if (hits < length) {
 			hits++;
 		}
-		return hits;
 	};
 
-	const isSunk = () => {
-		sunk = length === hits;
-		return sunk;
-	};
+	const isSunk = () => hits >= length;
 
-    return {
-		length,
-		name,
+	return {
+		get length() {
+			return length;
+		},
+		get name() {
+			return name;
+		},
 		get hits() {
 			return hits;
 		},
 		get sunk() {
-			return sunk;
+			return isSunk();
 		},
 		hit,
 		isSunk,
