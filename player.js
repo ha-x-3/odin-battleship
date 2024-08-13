@@ -9,7 +9,7 @@ export default function Player(name) {
 			(ship) => ship.coordPairs.length > 0
 		);
 		placedShips.forEach((ship) => {
-			// document.getElementById(ship.coordPairs.length).style.backgroundColor = "#70717c";
+			document.getElementById(ship.coordPairs.length).style.backgroundColor = "#70717c";
 			//console.log('here');
 		});
 
