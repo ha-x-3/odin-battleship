@@ -1,0 +1,350 @@
+@font-face {
+  font-family: "Inder";
+  src: url('./assets/Inder-Regular.ttf');
+  font-style: normal;
+}
+
+:root {
+  font-family: "Inder";
+  --primary-blue: #181823;
+  --primary-purple: #4a4182;
+  --primary-pink: #f2dede;
+  --primary-red: #964848;
+  --nautical-blue: #1a5091;
+}
+
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: var(--primary-purple);
+}
+
+/*HEADER*/
+.navbar {
+  display: flex;
+  justify-content: center;
+  gap: 2em;
+  align-items: center;
+  background-color: var(--primary-blue);
+  height: 10vh;
+  -webkit-box-shadow: 0px 5px 17px -6px rgba(0, 0, 0, 0.54);
+  box-shadow: 0px 5px 17px -6px rgba(0, 0, 0, 0.54);
+}
+
+.modal {
+  visibility: hidden;
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  top: 10%;
+  left: 30%;
+  max-width: 40%;
+  background-color: var(--primary-pink);
+  padding: 1em;
+  gap: 1em;
+  border-radius: 5px;
+  -webkit-box-shadow: 0px 5px 17px -6px rgba(0, 0, 0, 0.54);
+  box-shadow: 0px 5px 17px -6px rgba(0, 0, 0, 0.54);
+}
+
+.accent {
+  font-size: 24px;
+  font-weight: 600;
+  color: var(--nautical-blue);
+}
+/* MAIN CONTENT */
+.content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 0px 100px;
+  min-height: 85vh;
+}
+.new-game {
+  cursor: pointer;
+  transition: all ease-in 0.2s;
+}
+.new-game:hover {
+  transform: scale(1.05);
+}
+.info-panel {
+  font-size: 24px;
+  color: var(--primary-pink);
+}
+.bottom-side-wrapper {
+  display: flex;
+  justify-content: center;
+  gap: 100px;
+}
+
+/* GAME CONTENT*/
+.player-board,
+.numbers-column,
+.letters-row,
+.computer-board {
+  display: flex;
+}
+.numbers-column {
+  flex-direction: column;
+  margin-top: 30px;
+}
+.letter {
+  height: 30px;
+  width: 50px;
+  font-size: 24px;
+  text-align: center;
+  color: var(--primary-pink);
+}
+.number {
+  height: 50px;
+  width: 30px;
+  font-size: 24px;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  color: var(--primary-pink);
+}
+.gameboard {
+  box-sizing: border-box;
+  display: grid;
+  grid-template-columns: repeat(10, 50px);
+  grid-template-rows: repeat(10, 50px);
+  background-color: var(--primary-pink);
+  border: solid 1px black;
+}
+
+.cell,
+.row {
+  box-sizing: border-box;
+  border: 1px solid rgba(24, 3, 3, 0.018);
+  width: 50px;
+  height: 50px;
+}
+
+.cell {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.cell:hover {
+  background-color: rgba(128, 128, 128, 0.212);
+}
+.player-panel {
+  box-sizing: border-box;
+  border: 1px solid var(--primary-blue);
+  background-color: var(--primary-pink);
+  padding: 15px 0px;
+}
+.player-ships,
+.player-control {
+  display: flex;
+  font-size: 24px;
+  padding: 0px 15px;
+}
+
+.player-control {
+  justify-content: space-between;
+  height: 40px;
+  margin-top: 15px;
+}
+.player-ships {
+  justify-content: space-between;
+  height: 30px;
+}
+.player-direction {
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  color: white;
+  border-radius: 2px;
+  background-color: var(--primary-red);
+  border: 1px solid var(--primary-blue);
+  transition: all ease-in 0.2s;
+}
+.player-name {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.length-selector {
+  box-sizing: border-box;
+  border-radius: 2px;
+  border: 1px solid var(--primary-blue);
+  background-color: var(--nautical-blue);
+  color: white;
+  text-align: center;
+  transition: all ease-in 0.2s;
+}
+.player-carrier {
+  width: 160px;
+}
+.player-battleship {
+  width: 120px;
+}
+.player-destroyer {
+  width: 90px;
+}
+.player-submarine {
+  width: 60px;
+}
+.player-patrol-boat {
+  width: 30px;
+}
+.unclickable {
+  pointer-events: none;
+}
+
+.ship-style {
+  box-sizing: border-box;
+  background-color: var(--nautical-blue);
+  border: 1px solid var(--primary-blue);
+  color: white;
+}
+.fa-circle-xmark {
+  color: white;
+}
+.invalid-placement:hover {
+  background-color: rgba(201, 23, 23, 0.767);
+}
+.can-start {
+  display: none;
+}
+.length-selector:hover,
+.player-direction:hover {
+  cursor: pointer;
+  transform: scale(1.02);
+}
+
+/*FOOTER*/
+footer {
+  background-color: var(--primary-blue);
+  -webkit-box-shadow: 0px -5px 10px -4px rgba(0, 0, 0, 0.2);
+  box-shadow: 0px -5px 10px -4px rgba(0, 0, 0, 0.2);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 5vh;
+  color: var(--primary-pink);
+}
+.footer-link {
+  color: white;
+}
+/* GLOBAL SETTINGS */
+a,
+a:visited,
+a:focus {
+  text-decoration: none;
+  color: var(--primary-pink);
+}
+
+input:focus,
+input:active {
+  border-color: transparent;
+}
+.place-ships-info:hover {
+  cursor: pointer;
+}
+@media (max-width: 800px) {
+  .hide-on-mobile {
+    display: none;
+  }
+  .display-on-mobile {
+    display: flex;
+  }
+  .navbar {
+    gap: 1rem;
+    padding: 0px 1rem;
+  }
+  .content {
+    flex-direction: row;
+    justify-content: flex-start;
+    margin: 10px;
+    padding: 5px;
+  }
+  .bottom-side-wrapper {
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: 10px;
+  }
+  .gameboard,
+  .player-board,
+  .computer-board {
+    grid-template-columns: repeat(10, 30px);
+    grid-template-rows: repeat(10, 30px);
+    max-width: 300px;
+  }
+  .number {
+    height: 30px;
+    width: 30px;
+    font-size: 18px;
+  }
+  .letter {
+    height: 30px;
+    width: 30px;
+    font-size: 18px;
+  }
+
+  .cell,
+  .row {
+    width: 30px;
+    height: 30px;
+  }
+  .player-panel {
+    padding: 5px;
+  }
+  .player-ships {
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 5px;
+  }
+  .length-selector {
+    height: 32px;
+  }
+  .player-control {
+    font-size: 18px;
+    padding: 5px;
+    margin-top: 4rem;
+  }
+  .modal-mobile {
+    visibility: hidden;
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    top: 10%;
+    font-size:14px;
+    background-color: var(--primary-pink);
+    padding: 1em;
+    gap: 1em;
+    border-radius: 5px;
+    -webkit-box-shadow: 0px 5px 17px -6px rgba(0, 0, 0, 0.54);
+    box-shadow: 0px 5px 17px -6px rgba(0, 0, 0, 0.54);
+  }
+  .modal-mobile > button {
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1em;
+    color: white;
+    border-radius: 2px;
+    background-color: var(--primary-red);
+    border: 1px solid var(--primary-blue);
+    transition: all ease-in 0.2s;
+  }
+}
+@media (min-width: 800px) {
+  .modal-mobile {
+    display: none;
+    visibility: hidden;
+  }
+}
