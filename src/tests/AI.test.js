@@ -1,5 +1,5 @@
-import Player from "./player.js";
-import AI from "./AI.js";
+import Player from '../factories/player.js';
+import AI from '../factories/AI.js';
 
 let computerPlayer = AI('Computer');
 let player = Player('Enemy');

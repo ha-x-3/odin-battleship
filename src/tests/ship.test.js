@@ -1,13 +1,13 @@
-import Ship from './ship.js';
+import Ship from '../factories/ship.js';
 
 let newShip = Ship(2);
 
-it("Should create a new ship object", () => {
-    expect(typeof newShip).toBe('object');
+it('Should create a new ship object', () => {
+	expect(typeof newShip).toBe('object');
 });
 
-it("Should expect the correct length", () => {
-    expect(newShip.length).toBe(2);
+it('Should expect the correct length', () => {
+	expect(newShip.length).toBe(2);
 });
 
 it('Should expect initial sunk status to be false', () => {

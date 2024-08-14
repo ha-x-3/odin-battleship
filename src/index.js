@@ -1,6 +1,6 @@
-import "./styles.css";
-import AI from "../AI.js";
-import Player from "../player.js";
+import './styles.css';
+import AI from './factories/AI.js';
+import Player from '../player.js';
 
 const computerBoard = document.querySelector('.computer-array');
 const playerBoard = document.querySelector('.player-array');

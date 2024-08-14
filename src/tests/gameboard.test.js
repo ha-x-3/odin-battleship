@@ -1,4 +1,4 @@
-import Gameboard from './gameboard.js';
+import Gameboard from '../factories/gameboard.js';
 
 let testBoard = new Gameboard();
 
