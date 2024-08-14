@@ -177,7 +177,6 @@ const updateBoard = (board) => {
 };
 
 // NEW GAME BUTTON
-
 newGame.addEventListener('click', () => {
 	lengthSelectors.forEach((selector) => {
 		selector.style.backgroundColor = '#1a5091';
@@ -190,7 +189,6 @@ newGame.addEventListener('click', () => {
 });
 
 // DOM TOGGLE SHIPS SELECTORS
-
 lengthSelectors.forEach((selector) => {
 	selector.addEventListener('click', (e) => {
 		shipLength = parseInt(e.target.id);
@@ -208,8 +206,8 @@ directionSelector.addEventListener('click', () => {
 		directionSelector.innerText = 'H';
 	}
 });
-// HOW TO PLAY TOGGLE
 
+// HOW TO PLAY TOGGLE
 placeShipsInfo.addEventListener('mouseover', () => {
 	modal.style.visibility = 'visible';
 });
